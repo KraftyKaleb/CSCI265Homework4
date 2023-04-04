@@ -20,6 +20,9 @@ public class prog4KPG {
         // Calculate the minimum score
         System.out.println("The minimum score was: " + findMinScore(scoreList));
 
+        // Check if a student has a perfect score
+        System.out.println(hasPerfectScore(scoreList) ? "Someone has a perfect score!" : "No one has a perfect score.");
+
         // Calculate the average score
         System.out.println("The average score was: " + calcAverage(scoreList));
 

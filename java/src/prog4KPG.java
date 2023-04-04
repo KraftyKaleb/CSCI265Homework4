@@ -110,7 +110,6 @@ public class prog4KPG {
      * @return Average value of the array
      */
     private static double calcAverage(int[] scoresList) {
-        if (scoresList.length == 0) return -1;
         int allScores = 0;
         for (int i = 0; i < scoresList.length; i++) {
             allScores+=scoresList[i];

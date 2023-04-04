@@ -106,44 +106,44 @@ def findInList(scoresList, valueToFind, startingIndex=0):
             return j
     return -1
 
+def main ():
+    scoreList = [5, 10, 75, 80, 100, 30, 95, 100, 87]
+    studentList = ["Bob", "Jess", "Kaleb", "Joe", "Tom", "Marissa", "Austin", "Lily", "Ben"]
 
-scoreList = [5, 10, 75, 80, 100, 30, 95, 100, 87]
-studentList = ["Bob", "Jess", "Kaleb", "Joe", "Tom", "Marissa", "Austin", "Lily", "Ben"]
+    # Print all students and their scores
+    for i in range(len(scoreList)):
+        print(studentList[i] + ": " + str(scoreList[i]))
 
-# Print all students and their scores
-for i in range(len(scoreList)):
-    print(studentList[i] + ": " + str(scoreList[i]))
+    # Calculate the maximum score
+    print("The maximum score was: " + str(findMaxScore(scoreList)))
 
-# Calculate the maximum score
-print("The maximum score was: " + str(findMaxScore(scoreList)))
+    # Calculate the minimum score
+    print("The minimum score was: " + str(findMinScore(scoreList)))
 
-# Calculate the minimum score
-print("The minimum score was: " + str(findMinScore(scoreList)))
+    # Check if a student has a perfect score
+    print("Someone has a perfect score!" if hasPerfectScore(scoreList) else "No one has a perfect score.")
 
-# Check if a student has a perfect score
-print("Someone has a perfect score!" if hasPerfectScore(scoreList) else "No one has a perfect score.")
+    # Calculate the average score
+    print("The average score was: " + str(calcAverage(scoreList)))
 
-# Calculate the average score
-print("The average score was: " + str(calcAverage(scoreList)))
+    # Find the student with the maximum score
+    print("The student with the maximum score was: " + findStudentWithMax(scoreList, studentList))
 
-# Find the student with the maximum score
-print("The student with the maximum score was: " + findStudentWithMax(scoreList, studentList))
+    # Merge some more scores to our original list
+    additionalScores = [200, 150, 120]
+    mergedLists = mergeLists(scoreList, additionalScores)
 
-# Merge some more scores to our original list
-additionalScores = [200, 150, 120]
-mergedLists = mergeLists(scoreList, additionalScores)
+    print("After the additional scores were collected, here is the new score list: ")
+    for i in range(len(mergedLists)):
+        if i != 0:
+            print(", ", end='')
+        print(mergedLists[i], end='')
 
-print("After the additional scores were collected, here is the new score list: ")
-for i in range(len(mergedLists)):
-    if i != 0:
-        print(", ", end='')
-    print(mergedLists[i], end='')
+    # Calculate the standard deviation of the scores
+    print("\nThe standard deviation of the scores is: " + str(standardDeviation(scoreList)))
 
-# Calculate the standard deviation of the scores
-print("\nThe standard deviation of the scores is: " + str(standardDeviation(scoreList)))
-
-# Find students in the list by score
-student95 = studentList[findInList(scoreList, 95)] if scoreList != 0 else "None" # If there are no values in the list, return "None"
-student100 = studentList[findInList(scoreList, 100)] if scoreList != 0 else "None" # If there are no values in the list, return "None"
-print("A score of 95 was obtained by: " + student95)
-print("If we leave out Tom, a score of 100 was obtained by: " + student100)
+    # Find students in the list by score
+    student95 = studentList[findInList(scoreList, 95)] if scoreList != 0 else "None" # If there are no values in the list, return "None"
+    student100 = studentList[findInList(scoreList, 100)] if scoreList != 0 else "None" # If there are no values in the list, return "None"
+    print("A score of 95 was obtained by: " + student95)
+    print("If we leave out Tom, a score of 100 was obtained by: " + student100)

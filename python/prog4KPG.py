@@ -147,3 +147,5 @@ def main ():
     student100 = studentList[findInList(scoreList, 100)] if scoreList != 0 else "None" # If there are no values in the list, return "None"
     print("A score of 95 was obtained by: " + student95)
     print("If we leave out Tom, a score of 100 was obtained by: " + student100)
+
+main()
